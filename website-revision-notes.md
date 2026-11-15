@@ -47,3 +47,19 @@
 
 - 首页顶栏中，**Face Swap** 紧接在 **AI Image** 右侧，直接显示在顶栏。
 - 点击 **Face Swap** 可进入对应的功能页。
+
+## 04｜首页 CTA 对齐 Vidou 的样式和动画
+
+**修改位置**  
+首页的 **Ready to Get Started?** CTA 模块。参考 [Vidou 首页](https://vidou.ai/) 的同名模块。
+
+**实现要求**
+
+- 按 Vidou 还原整个模块，包括黑色背景、底部绿色光晕、内容布局、字体和间距，以及绿色圆角 **Start Free Now** 按钮。
+- 沿用参考模块的标题、说明文案和按钮文案。说明文案为 “Experience AI image-to-video generation now and bring your creativity to life.”
+- 对照 Vidou 实际页面复现该模块的动画及交互效果，包括实际发生的变化、触发条件、时长、缓动和循环行为。若项目中可以复用 Vidou 的原组件或动画样式，优先复用。
+
+**验收标准**
+
+- 在相同的桌面和移动端视口下，新站 CTA 的文案、静态布局、配色和视觉细节与 Vidou 对应模块一致。
+- 对两个页面执行相同的触发操作，确认动画的变化过程、节奏及播放行为一致。
