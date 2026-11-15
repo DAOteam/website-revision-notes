@@ -180,3 +180,19 @@ About 页面的 **Tools in the Vidou workspace** 区块。
 
 - 标题右侧显示 **Tasks kept for 7 days**，标题下方直接显示作品列表。
 - 在窄屏下检查标题和提示，确保文字完整可读，布局无重叠。
+
+## 12｜移除作品卡片上的工具标签并统一标题大小写
+
+**修改位置**
+
+**My Creations** 作品列表的卡片，涉及预览缩略图及其下方的工具标题。
+
+**实现要求**
+
+- 移除所有作品卡片缩略图左上角叠加的工具名称标签，例如截图红框中的 **vidou AI image to video generator** 和 **vidou AI video generator**。
+- 将卡片下方工具标题中的 **To** 改为小写 **to**，与工具导航命名一致。截图示例为 **Image to Video** 和 **Text to Video**。同样的规则适用于其他包含 **to** 的工具标题，例如 **Text to Image**。
+
+**验收标准**
+
+- 作品预览缩略图上不再显示工具名称标签。
+- 图生视频和文生视频卡片的标题分别显示为 **Image to Video** 和 **Text to Video**。
