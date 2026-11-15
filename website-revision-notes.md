@@ -271,3 +271,116 @@ About 页面的 **Tools in the Vidou workspace** 区块。
 - 发起一笔消耗 80 积分的任务后，积分记录立即显示 **−80 credits**。
 - 若该任务失败，积分记录同时保留原扣分和新增的 **+80 credits**，退分记录明确标注 **Task failed**，余额恢复到扣分前的水平（期间无其他积分变动）。
 - 任务成功时仅显示扣分记录。重复处理失败事件时，余额和退分记录均只更新一次。
+
+## 17｜Pricing 页新增各功能的积分收费标准
+
+**修改位置**
+
+**Pricing** 页，三张积分套餐价格卡片的正下方。新增一个独立模块，英文标题建议为 **Credit Costs by Tool**。
+
+**实现要求**
+
+- 逐项列出当前开放功能的积分收费标准，包括 **Image to Video**、**Text to Video**、**Text to Image**、**Image Edit**、**Face Swap** 和 **AI Movie**。
+- 每项明确标示实际积分费率和计费单位。若价格受分辨率、时长、人脸配对数量或其他设置影响，列出适用档位或计算规则。若预览和正式生成分开收费，分别说明。
+- 收费标准以各功能实际生效的定价配置为准，并与功能页提交任务前显示的报价一致。
+
+**验收标准**
+
+- Pricing 页三张价格卡片下方可看到完整的收费标准模块，每个在用功能均可查到对应规则。
+- 选择不同计费设置，并按照 Pricing 页列出的规则计算总价，结果与对应功能页显示的积分相符。
+
+## 18｜图生视频单图任务使用新的系统提示词和图片输入
+
+**修改位置**
+
+**Image to Video** 根据用户描述生成专业视频提示词的步骤。
+
+**实现要求**
+
+- 当本次图生视频任务恰好上传 **1 张图片**时，使用新的单图系统提示词。零张或多张图片的任务沿用各自现有的处理流程。
+- 调用生成专业提示词的大模型时，将用户上传的这张图片作为模型可读取的图像输入，与用户原始描述一起发送。
+- **新的系统提示词正文待补充。**
+
+**验收标准**
+
+- 提交单图任务，确认生成提示词的请求使用新的单图系统提示词，并包含用户上传的实际图片和原始描述。
+- 提交双图及三图任务，确认未进入单图分支。
+
+## 19｜HD 图生视频任务提交后自动清空表单
+
+**修改位置**
+
+**Image to Video** 生成表单，适用于点击 **Generate** 提交 HD 视频任务的流程。
+
+**实现要求**
+
+- 服务端确认 HD 任务创建成功后，立即自动清空本次任务的所有输入，包括已上传的参考图片、描述文字及其他已填写字段，并将生成选项恢复为新任务的默认值。
+- 新任务进入队列后，用户即可填写下一份表单。
+- 点击 **Preview First** 生成预览，或 HD 任务提交失败时，保留表单输入，方便修改或重试。
+
+**验收标准**
+
+- 上传参考图片、输入描述并提交 HD 任务。任务创建成功后，任务使用提交时的完整输入，页面表单立即重置，可直接填写下一个任务。
+- 分别测试预览生成和 HD 提交失败，确认原有图片、描述和选项仍可继续使用。
+
+## 20｜更新 AI Movie 页的 SEO 标题和元描述
+
+**修改位置**
+
+**AI Movie** 页面 HTML 的 `<title>` 和 `<meta name="description">`。
+
+**英文文案**
+
+| 字段 | 文案 | 字符数 |
+| --- | --- | --- |
+| Title | AI Movie Maker for Consistent Characters \| Vidou | 48 |
+| Meta description | Create a reusable character library, generate video clips with consistent characters, and stitch them into a movie with Vidou's AI Movie Maker. | 143 |
+
+**验收标准**
+
+- 打开 AI Movie 页面，检查最终 HTML 输出中的标题和元描述均与表格文案一致。
+- 标题不超过 60 字符，元描述不超过 160 字符，空格和标点计入字符数。若站点自动附加品牌名，确保标题中只出现一次 **Vidou**。
+
+## 21｜在 Terms of Service 中补充 Face Swap 使用条款
+
+**修改位置**
+
+站点的 **Terms of Service** 页面，以及 **Face Swap** 功能区勾选确认处的协议链接。
+
+**当前问题**
+
+Face Swap 功能区要求用户确认素材使用权和人物同意，并接受 Terms of Service。当前协议缺少对应的换脸使用条款。
+
+**实现要求**
+
+- 在 **Terms of Service** 中新增 **Face Swap** 小节，适用于图片和视频换脸。
+- 将 Face Swap 勾选确认处的 **Terms of Service** 链接定位到该小节。页面提示、勾选文案和协议条款对素材使用权、肖像同意和禁止用途的说明应一致。
+
+**协议英文文案**
+
+### Face Swap
+
+Face Swap is for entertainment only. You may upload and use photos or videos only if you have the rights and permissions to use them. Before using anyone else’s likeness in a face swap, you must obtain their consent to the intended use. If you plan to share the result, their consent must also cover that sharing.
+
+You may not use Face Swap to create or share sexual, deceptive, or illegal content. Prohibited uses include impersonating someone to mislead others, creating false endorsements, and using a person’s likeness for fraud.
+
+**验收标准**
+
+- 从 Face Swap 功能区点击 **Terms of Service**，可直接查看 **Face Swap** 条款。
+- 条款明确写明娱乐用途、上传素材使用权、使用他人肖像前须取得同意，以及禁止性内容、欺骗性内容和违法内容。
+
+## 22｜所有协议页的顶部导航与首页一致
+
+**修改范围**
+
+站点现有的所有协议和政策页面，包括 **Terms of Service**、**Privacy Policy** 及其他同类页面。
+
+**实现要求**
+
+- 复用首页顶部导航组件，使菜单顺序、样式、链接目标、下拉交互及移动端导航与首页一致。
+- 同步应用第 02、03 和 08 项。**AI Movie** 位于 **AI Video** 下拉菜单首位，**Face Swap** 作为独立入口紧邻 **AI Image** 右侧，付费工具入口显示为 **Premium Tools**。
+
+**验收标准**
+
+- 在相同桌面和移动端视口下打开首页及各协议页，核对顶部导航的布局、菜单内容和交互一致。
+- 从协议页操作顶部导航，确认菜单可正常展开，各入口跳转至与首页相同的目标。Face Swap 页面链接到协议中对应条款的定位仍正常。
