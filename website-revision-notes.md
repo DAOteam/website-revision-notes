@@ -78,3 +78,20 @@
 
 - **Product** 栏从上到下依次显示 **AI Movie**、**Image to Video**、**Text to Video**、**Text to Image**、**Image Editor**、**Face Swap**。
 - 点击新增的两项链接，可分别进入对应的功能页。
+
+## 06｜About 页面新增 AI Movie 和 Face Swap 卡片
+
+**修改位置**  
+About 页面的 **Tools in the Vidou workspace** 区块。
+
+**实现要求**
+
+- 在现有四张工具卡片之后新增 **AI Movie** 和 **Face Swap**。复用现有卡片的图标、标题、说明文字布局及响应式网格样式，为两个功能分别配上对应的图标。
+- **AI Movie** 说明文案建议为 “Create reusable characters, generate clips with consistent characters, and stitch them into a movie.”
+- **Face Swap** 说明文案建议为 “Replace a face with one from a reference image.”
+- 将区块引言中的 “four tools” 改为 “six tools”。
+
+**验收标准**
+
+- 工具区共显示六张卡片，桌面端新增两张卡片组成第三行，移动端沿用现有卡片的响应式布局。
+- 新卡片标题分别为 **AI Movie** 和 **Face Swap**，引言中的工具数量与卡片数量一致。
