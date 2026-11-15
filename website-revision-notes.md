@@ -32,3 +32,18 @@
 
 - 打开首页 **AI Video** 下拉菜单，从上到下依次显示 **AI Movie**、**Image to Video**、**Text to Video**。
 - 点击 **AI Movie** 可进入对应的功能页。
+
+## 03｜首页顶部导航新增 Face Swap
+
+**修改位置**  
+首页顶部导航栏，紧邻 **AI Image** 右侧。
+
+**实现要求**
+
+- 在 **AI Image** 右侧新增独立的一级导航项 **Face Swap**。
+- 点击 **Face Swap** 进入对应的换脸功能页。导航项沿用现有顶栏样式。
+
+**验收标准**
+
+- 首页顶栏中，**Face Swap** 紧接在 **AI Image** 右侧，直接显示在顶栏。
+- 点击 **Face Swap** 可进入对应的功能页。
