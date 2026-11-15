@@ -149,11 +149,19 @@ About 页面的 **Tools in the Vidou workspace** 区块。
 
 **实现要求**
 
-- 在标记位置增加指导按钮，英文按钮文案暂定为 **Guide**。为按钮留出空间，避免遮挡用户输入的文字。
+- 在标记位置增加指导按钮，英文按钮文案为 **Guide**。为按钮留出空间，避免遮挡用户输入的文字。
 - 点击按钮打开弹窗，展示如何编写 **Your description** 的指导。弹窗可关闭，打开和关闭时保留用户已输入的内容。
-- **指导正文待补充。** 以用户后续提供的文案为准。
+
+**弹窗英文文案**
+
+**How to Write Your Description**
+
+1. Just describe the video you want to create in your own words. Include as much detail as you can, and we'll turn your description into a professional prompt.
+2. To refer to a specific image you've uploaded, click its `@img` tag above the description box. For example, `@img1 smiles at @img2.`
+3. To make a character speak, use this format: `@img1 says: 'Hello.'`
+4. Generate a preview first. If it doesn't look the way you want, try rephrasing your description or adding more detail, then generate another preview.
 
 **验收标准**
 
-- **Guide** 按钮显示在输入框右上角，点击可打开指导弹窗。
+- **Guide** 按钮显示在输入框右上角，点击可打开指导弹窗，显示上述四条英文指导。
 - 关闭弹窗后，用户可以继续编辑原有描述。
