@@ -212,3 +212,24 @@ About 页面的 **Tools in the Vidou workspace** 区块。
 
 - 打开任意可播放的视频作品，等待媒体加载完成，确认画面保持暂停且没有播放声音。
 - 点击播放控件一次，视频正常开始播放。关闭弹窗并重新打开，视频仍等待用户手动播放。
+
+## 14｜调整图生视频预览按钮并增加帮助提示
+
+**修改位置**
+
+**Image to Video** 生成表单底部的操作区，即 **Generate** 和预览按钮所在的位置。
+
+**实现要求**
+
+- 将右侧预览按钮文案改为 **Preview First· 10 credits**。
+- 缩短左侧 **Generate** 按钮的宽度，为新版预览按钮和帮助图标留出空间。
+- 在 **Preview First· 10 credits** 按钮紧邻右侧添加独立的 **?** 帮助按钮。点击问号只打开说明提示，预览仍由预览按钮触发。
+
+**提示英文文案**
+
+> Before generating your HD video, create a low-resolution preview. If the preview isn’t quite right, edit your video description and generate another preview. It’s the quickest, lowest-cost way to try different descriptions. Once you’re happy with the preview, generate the HD video.
+
+**验收标准**
+
+- **Generate** 按钮变窄，右侧依次显示完整的 **Preview First· 10 credits** 文案和 **?** 帮助按钮。
+- 点击 **?** 显示上述英文提示，且不提交任务或扣除积分。
