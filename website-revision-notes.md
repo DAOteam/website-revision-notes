@@ -110,3 +110,18 @@ About 页面的 **Tools in the Vidou workspace** 区块。
 
 - 在相同视口下分别打开首页和 `/blog/`，核对导航布局、菜单顺序、下拉内容和交互一致。
 - 在 Blog 页点击导航项，确认进入与首页相同的对应页面。
+
+## 08｜顶部导航将 Pro Version 更名为 Premium Tools
+
+**修改位置**  
+首页及其他使用同一顶部导航的页面，位于 **Pricing** 右侧的绿色按钮。
+
+**实现要求**
+
+- 将按钮文案从 **Pro Version** 改为 **Premium Tools**，明确这是高级付费功能的入口。
+- 沿用现有按钮样式和高级功能入口的链接目标。第 01 项提到的 **Pro Version** 按钮即此按钮。
+
+**验收标准**
+
+- 首页和 Blog 页的顶部导航均显示 **Premium Tools**。
+- 点击 **Premium Tools** 可进入现有的高级付费功能页面。
