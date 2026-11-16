@@ -36,3 +36,20 @@
 
 - AI Movie 工作区的参考图区域显示 **Reference Images**。
 - 片段相关的标题、按钮及其他提示文案统一使用 **Clip** 或 **Clips**。
+
+## 24｜更新 AI Movie 首屏文案和登录表单标签
+
+**修改位置**
+
+**AI Movie** 页的未登录首屏，以及从该页打开的登录表单。
+
+| 位置 | 现有文案或问题 | 修改要求 |
+| --- | --- | --- |
+| 首屏标题 | Turn a story into a short film | **Make a short film with consistent characters** |
+| 首屏说明 | Write a few sentences, pick your characters, and get a film made segment by segment — the same faces and voices from the first shot to the last. | **Create a cast you can reuse across clips, generate each clip, and stitch them together into a short film.** |
+| 登录表单 | **Email** 和 **Password** 只显示为输入框的占位文字，输入后字段名消失。 | 为两个输入框分别添加常驻可见标签 **Email** 和 **Password**，并将标签与对应输入框关联。 |
+
+**验收标准**
+
+- 未登录时打开 AI Movie 页，首屏标题和说明与表格中的新文案一致。
+- 打开登录表单，在两个字段输入内容后，**Email** 和 **Password** 标签仍清晰可见。
