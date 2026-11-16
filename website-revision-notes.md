@@ -45,8 +45,8 @@
 
 | 位置 | 现有文案或问题 | 修改要求 |
 | --- | --- | --- |
-| 首屏标题 | Turn a story into a short film | **Make a short film with consistent characters** |
-| 首屏说明 | Write a few sentences, pick your characters, and get a film made segment by segment — the same faces and voices from the first shot to the last. | **Create a cast you can reuse across clips, generate each clip, and stitch them together into a short film.** |
+| 首屏标题 | Turn a story into a short film | **Make a movie with consistent characters** |
+| 首屏说明 | Write a few sentences, pick your characters, and get a film made segment by segment — the same faces and voices from the first shot to the last. | **Create a cast you can reuse across clips, generate each clip, and stitch them together into a movie.** |
 | 登录表单 | **Email** 和 **Password** 只显示为输入框的占位文字，输入后字段名消失。 | 为两个输入框分别添加常驻可见标签 **Email** 和 **Password**，并将标签与对应输入框关联。 |
 
 **验收标准**
