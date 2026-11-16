@@ -102,3 +102,69 @@
 
 - 打开功能页，确认 **AI Movie** 紧接在 **Image to Video** 下方。
 - 通过点击侧栏、直接输入地址、刷新页面及使用浏览器前进或后退切换页面时，均只有当前页面对应的菜单项显示选中效果。验证范围包括 **Pricing**。
+
+## 28｜重写 Face Swap 工具下方的英文图文内容
+
+**修改位置**
+
+`/face-swap/` 页工具模块下方、公共页脚上方的介绍区。复用 Image to Video 和 Image Edit 页已有的介绍区组件，包括三步流程卡片、图文模块、FAQ、相关工具和底部 CTA。下方为可直接上线的英文文案及配图要求。
+
+### 页面标题和简介
+
+**H1** — AI Face Swap for Photos, GIFs, and Videos
+
+Replace one face or several in a photo, GIF, or video. Give each person a different face, or use the same face for everyone. For videos, select just the part you want to use and check the credit cost before you generate.
+
+### How to Use Face Swap
+
+1. **Upload your photo, GIF, or video**  
+   Choose the file you want to edit. For a video, use the full clip or trim it to the part you want to swap. The selected clip must be at least 5 seconds long.
+2. **Choose the faces to replace**  
+   In **Specific Faces**, pair each face you want to change with a replacement photo. Keep the remaining faces as they are, or choose **Swap All Faces** to use the same replacement for everyone.
+3. **Check the cost and generate**  
+   Review the credit total before you start. Open the finished swap in **My Creations** to review or download it.
+
+### Swap One Face or Several
+
+In a group photo, you can replace one face and keep the others as they are. To use a different replacement for each person, add a separate face pair. **Swap All Faces** uses one replacement for everyone in the image or clip.
+
+**配图要求** — 使用已获授权或合成的三人照片制作 Before / After 示例。仅替换中间一人，两侧人物、背景和构图保持一致。图上标注 **Original** 和 **One Face Swapped**。  
+**Alt text** — Before and after a group photo face swap that replaces only the center person’s face.
+
+### Swap a Face in Part of a Video
+
+Use the trimmer to select the part of the video you want to edit. If the automatic selection misses someone, open the face slot in the pair, pause on a frame where the person is clearly visible, and select their outlined face.
+
+**配图要求** — 使用实际工具界面或与现有界面一致的示意图，展示视频剪裁区间及用于选脸的清晰帧。沿用其他工具页图文模块的图片比例和排版。  
+**Alt text** — Face Swap video trimmer with a selected clip and a face outlined in the preview.
+
+### Choose a Clear Replacement Photo
+
+- **Use a sharp, front-facing photo.** Keep the whole face in frame, with the eyes, nose, and mouth visible.
+- **Match the angle and lighting.** Choose a replacement photo with a similar head angle and light direction.
+- **Review the result.** For video, play through the clip and watch for changes around the face edges, especially when the person turns or passes behind something.
+
+### Face Swap FAQ
+
+- **Which files can I use?** Start with a JPEG, PNG, WebP, GIF, MP4, MOV, or WebM file. Use a JPEG, PNG, or WebP photo for each replacement face.
+- **Can I replace multiple faces?** Yes. Add a face pair for each person you want to change, or use **Swap All Faces** to apply the same replacement to everyone.
+- **What if the face I want isn’t detected?** Choose a clearer source image or, for a video, pause on a frame where the person’s full face is clearly visible and select their outlined face.
+- **How much does a face swap cost?** The tool shows the credit total before you generate. The cost depends on the file type and the number of face pairs. For videos, the selected duration and source resolution also affect the total. See **Pricing** for the current rates.
+- **What can I use Face Swap for?** Face Swap is for entertainment. Use media you have permission to use and get consent before using someone else’s likeness. See the **Face Swap** section of the **Terms of Service** for the full rules.
+
+### Explore More AI Tools
+
+- **Image to Video** — Animate a still image by describing how you want it to move.
+- **Image Editor** — Describe a focused change to an image and specify what to keep.
+
+### Ready to Swap Faces?
+
+Pick a photo, GIF, or video and choose the faces you want to replace.
+
+**CTA** — Start a Face Swap
+
+**验收标准**
+
+- 介绍区与现有工具页使用一致的版式、组件和移动端堆叠方式。两张配图分别讲清指定单人换脸和选取视频片段。
+- 页面中的模式名称与工具界面一致。**Pricing** 和协议链接指向正式页面，底部 CTA 定位到当前页的换脸工具。
+- FAQ 的可见文案和对应的 FAQ 结构化数据一致（如该页使用 FAQ 结构化数据）。
