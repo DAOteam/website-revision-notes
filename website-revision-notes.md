@@ -257,3 +257,22 @@ Start with a reference image and one action for your first clip.
 - 正文、操作步骤和 FAQ 在未登录时可读，服务端返回的 HTML 包含这些内容。
 - 术语统一使用 **Reference Images**、**Clip / Clips** 和 **Movie**。两张配图能分别说明跨片段角色复用和场景、道具参考的用法，且有对应的英文 alt 文本。
 - **Pricing** 链接指向价格页，底部 CTA 定位到当前页的 AI Movie 工具区。
+
+## 32｜文生图和图片编辑统一为 10 积分/次
+
+**定价**
+
+| 功能 | 路径 | 每次任务所需积分 |
+| --- | --- | ---: |
+| Text to Image | `/text-to-image/` | 10 |
+| Image Edit | `/image-edit/` | 10 |
+
+**实现要求**
+
+- 将两项功能的计价配置统一为每次任务 **10 积分**，确保提交前报价与实际扣费一致。
+- 更新 **Pricing** 页 **Credit Costs by Tool** 下这两项的价格，以及各功能页的积分提示和确认弹窗（如有）。相关 FAQ、帮助文案或结构化数据中如有明确的旧价格，也同步更新。
+
+**验收标准**
+
+- Pricing 页和两个功能页的提交前报价均显示 **10 credits**。
+- 分别完成一次文生图和图片编辑，确认每项任务实际扣除 10 积分，积分流水分别显示 **−10 credits**。
