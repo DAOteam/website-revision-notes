@@ -200,3 +200,60 @@ Pick a photo, GIF, or video and choose the faces you want to replace.
 **验收标准**
 
 - 在桌面和移动端检查首页底部 CTA，确认 **Start Free Now** 与站内同类主按钮使用相同的圆角样式。
+
+## 31｜补充 AI Movie 功能区下方的英文图文内容
+
+**修改位置**
+
+`/ai-movie/` 工具区下方、公共页脚上方。沿用其他工具页的三步流程卡片、图文模块、FAQ、相关工具和底部 CTA。将以下介绍内容放在公开 HTML 中，访客打开页面即可阅读。
+
+### Make a Movie One Clip at a Time
+
+AI Movie lets you build a movie from individual AI-generated clips. Add reference images for your characters, locations, and props, then reuse them across clips to help keep the look consistent. Describe what happens in each clip and join the clips into a movie when they’re ready.
+
+### How to Make an AI Movie
+
+1. **Add reference images**  
+   Add the people, places, and objects you want to reuse. Give each reference a name so you can find it when you work on a new clip.
+2. **Describe and generate each clip**  
+   Describe one action at a time. Choose the references you need for that clip, set its duration and resolution, then generate it.
+3. **Put your clips together**  
+   Review each clip, arrange them in story order, and join them into one movie.
+
+### Keep a Character Recognizable Across Clips
+
+Reuse the same character reference whenever that character appears. For example, use one photo of a cyclist in a yellow jacket for three clips. In the first clip, the cyclist leaves a repair shop. In the second, they cross a bridge. In the third, they arrive at a lookout. Each clip has a different action and setting, with the same character reference throughout.
+
+**配图要求** — 使用实际工具生成的三张示例帧，按故事顺序并排展示。同一角色在不同地点做不同动作，脸部和黄色外套保持可辨认。可在左侧放所用的角色参考图，标注 **Reference**，三张帧分别标为 **Clip 1**、**Clip 2** 和 **Clip 3**。  
+**Alt text** — One cyclist reference image reused across three AI Movie clips at a repair shop, on a bridge, and at a lookout.
+
+### Reuse a Location or Prop When It Matters
+
+Add reference images for details that should carry over from one clip to the next. If two clips take place in the same café, reuse the café photo to help preserve its layout. If a red suitcase appears in several clips, reuse its reference and describe what the character does with it in each clip.
+
+**配图要求** — 展示角色、咖啡馆和红色行李箱三类参考图，以及使用这些素材的实际片段帧。可用与现有界面一致的参考图区截图搭配生成结果。  
+**Alt text** — Character, café, and red suitcase reference images shown beside the AI Movie clip that uses them.
+
+### AI Movie FAQ
+
+- **Do I have to write the whole movie in one prompt?** Write a short description for each clip, focusing on the action you want to see. Join the finished clips in story order.
+- **How do I keep the same character across clips?** Reuse the same character reference wherever the character appears. If specific details matter, such as a yellow jacket or round glasses, mention them in the clip description.
+- **Can I use reference images for locations and props?** Yes. Add a reference for a place or object you want to bring into a clip. Reuse that reference in later clips when the same detail should appear again.
+- **How are credits charged?** Each clip is priced by duration and resolution. Check the credit cost before you generate. Joining clips into a movie is free. See **Pricing** for current rates.
+
+### Explore More AI Tools
+
+- **Image to Video** — Animate a still image and describe how it should move.
+- **Text to Video** — Turn a written scene description into a video clip.
+
+### Ready to Make Your Movie?
+
+Start with a reference image and one action for your first clip.
+
+**CTA** — Create Your Movie
+
+**验收标准**
+
+- 正文、操作步骤和 FAQ 在未登录时可读，服务端返回的 HTML 包含这些内容。
+- 术语统一使用 **Reference Images**、**Clip / Clips** 和 **Movie**。两张配图能分别说明跨片段角色复用和场景、道具参考的用法，且有对应的英文 alt 文本。
+- **Pricing** 链接指向价格页，底部 CTA 定位到当前页的 AI Movie 工具区。
