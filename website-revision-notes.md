@@ -4,7 +4,7 @@
 
 ## 18｜图生视频单图任务使用新的系统提示词和图片输入
 
-**状态：尚未实现。**
+**状态：尚未完成，待补单图系统提示词正文。**
 
 **修改位置**
 
@@ -21,237 +21,130 @@
 - 提交单图任务，确认生成提示词的请求使用新的单图系统提示词，并包含用户上传的实际图片和原始描述。
 - 提交双图及三图任务，确认未进入单图分支。
 
-## 29｜补齐全站按钮的鼠标悬停反馈
+## 35｜将 AI Movie 电影编辑页的 PC 导航与移动端对齐
 
-**状态：尚未完成。**
-
-**当前问题**
-
-部分可点击按钮在鼠标移入时缺少可见的悬停效果，或光标仍是箭头、没有变成小手。
-
-**实现要求**
-
-- 检查全站可点击按钮，覆盖主要按钮、次要按钮、图标按钮和弹窗按钮，补齐缺失的 hover 样式。
-- 可点击的按钮在整个点击区域（包括图标和文字上方）使用 `cursor: pointer`，检查共享按钮和自定义按钮。
-- 沿用现有按钮视觉规范，通过背景、边框或文字颜色变化提供清晰反馈。鼠标移出后恢复原有状态。
-- 禁用按钮保持禁用外观，选中按钮的选中样式在悬停时仍清晰可辨。
-
-**验收标准**
-
-- 在桌面端逐一检查主要页面和弹窗。鼠标移入可点击按钮时，光标变成小手，同时出现可见的悬停反馈。移出后恢复原样。
-- 禁用按钮仍不可点击，悬停时不显示小手。选中状态与普通悬停状态可区分。
-
-## 33｜功能页的介绍图文仅向未登录访客展示
+**状态：PC 端待修改。**
 
 **修改范围**
 
-所有独立功能页，包括 **Image to Video**、**Text to Video**、**Text to Image**、**Image Edit**、**Face Swap** 和 **AI Movie**。仅调整工具操作区下方的介绍图文。
+AI Movie 电影编辑页内，站点顶栏下方的电影导航栏。PC 端采用移动端的布局与交互。
 
-**实现要求**
+- 左侧保留 **All movies**。导航栏中间仅显示电影名，水平和垂直居中，长名称显示省略号。
+- 右侧使用竖向三点菜单，第一项为 **Movie Info**，第二项为红色 **Delete**，沿用现有删除流程。
+- **Movie Info** 弹窗显示名称、分辨率和宽高比。无生成结果时三项均可编辑。生成任何 Clip 结果后（含低清预览），仅名称可编辑，分辨率和宽高比只读。
 
-- 未登录时，展示工具操作区下方的完整介绍内容，包括已有的图文、操作步骤、FAQ、相关工具和底部 CTA。公开 HTML 中仍可读取这些介绍内容。
-- 登录后，隐藏整个介绍区，并收起该区域占用的空间。工具操作区、任务结果、**My Creations** 和全站公共页脚按原有逻辑显示。
-- 在当前页登录或退出后，介绍区按最新登录状态切换。
+**待验收**
 
-**验收标准**
+- PC 端核对布局、菜单和弹窗与移动端一致。
 
-- 分别以访客和已登录用户打开六个功能页，确认介绍区只在访客状态下显示。
-- 在功能页内登录后确认介绍区立即收起，退出后恢复。两种状态下均可看到工具操作区。
+## 45｜调整图生视频预览前后的操作按钮宽度和文案
 
-## 34｜AI Movie 移动端卡片改为上下排列
-
-- 在移动端将 AI Movie 页面的两张入口卡片从双列改为单列。上方显示 **Create a movie**，下方显示 **Character library**。
-- 两张卡片分别占满内容区的可用宽度，沿用现有间距规范。桌面端沿用双列布局。
-- 验收时，在手机宽度下确认卡片按上述顺序展示，文字、头像和入口完整可见，页面无横向滚动。
-
-## 35｜调整 AI Movie 电影编辑页的移动端导航
-
-**修改位置**
-
-AI Movie 电影编辑页内，站点顶栏下方的电影导航栏。
-
-**实现要求**
-
-- 左侧保留 **All movies** 返回入口。中间只显示当前电影名称，相对于整个导航栏水平和垂直居中。长名称在两侧控件之间截断并显示省略号。
-- 右侧将原有的 **Delete** 按钮改为竖向三点按钮（⋮）。点击展开下拉菜单，第一项为 **Movie Info**，第二项为红色的 **Delete**，沿用原有删除流程。
-- 点击 **Movie Info** 打开弹窗，显示当前电影的名称、分辨率和宽高比。还没有生成任何 Clip 时，三项均可编辑并保存。只要已有任何一个 Clip 的生成结果，即使只有预览，便只允许编辑并保存名称，分辨率和宽高比显示为只读。
-- 仅创建空 Clip 或填写内容后仍可编辑三项。保存时校验最新状态，确保已有生成结果的电影无法更新分辨率和宽高比。
-
-**验收标准**
-
-- 在手机宽度下检查电影名居中、长名称显示省略号、左右控件可操作，并确认菜单项顺序及删除项颜色。
-- 分别检查无生成结果（含只有空 Clip）、仅生成过预览、已有 HD 结果三种状态。前一种状态三项均可保存，后两种状态只能保存名称。
-
-## 36｜在 AI Movie 移动端的描述上方独立显示参考图
-
-**修改位置**
-
-仅调整 AI Movie 的移动端 Clip 编辑页。将 **Reference Images** 放在预览画面下方、**Your description** 上方。桌面端继续使用现有布局和交互。
-
-**实现要求**
-
-- 使用 **Reference Images** 作为独立区块标题。没有参考图时，在标题下显示 **＋ Add reference images** 按钮。有参考图时，在标题右侧始终显示 **Manage** 按钮。
-- 两个按钮都打开同一个现有的底部弹窗。弹窗内按 **Characters / Scenes / Props** 分组，可继续添加或移除参考图。
-- 添加后，沿用编辑页现有的绿色 `@名称` 标签样式。按类别分组，每组标签前显示分类名称，例如 **People** `@elon`、**Scenes** `@Scene1`、**Props** `@Prop1`。同一类别有多张图时，分类名称只显示一次。
-- 点击 `@名称` 标签，在描述输入框的光标处插入引用。窄屏下，标签可换行。
-
-**验收标准**
-
-- 未添加时，点击 **＋ Add reference images** 打开弹窗，分别添加角色、场景和道具。返回后确认标题右侧显示 **Manage**，每组标签前都有分类名称，点击标签可将引用插入描述。
-- 点击 **Manage** 重新打开同一个弹窗，确认可继续添加或移除图片。移除全部参考图后，编辑页恢复 **＋ Add reference images** 入口。
-
-## 37｜移动端 Clip 提交预览后自动滚动到顶部
+**状态：待修改。**
 
 **修改范围**
 
-AI Movie 的移动端 Clip 编辑页。
+**Image to Video** 填完输入后、尚未生成预览，以及预览生成完成这两种状态下的操作区。
 
-**实现要求**
+移动端各视口宽度统一分行，包括较宽的手机屏幕。**Credits required** 单独一行显示，下一行放生成按钮，预览或重做操作再另起一行。
 
-- 用户点击 **Preview** 且预览任务提交成功后，自动将当前 Clip 编辑页滚动到顶部，让用户立即看到预览区的任务状态，确认预览已发起并正在等待生成。
-- 提交失败时保留当前滚动位置，沿用现有错误提示。
-
-**验收标准**
-
-- 在手机上滚动到 **Preview** 按钮并提交任务，确认页面自动回到顶部，无须手动滚动即可看到预览任务的等待状态。
-
-## 38｜修复移动端 Clip 视频缺少播放按钮
-
-**修改范围**
-
-AI Movie 的移动端 Clip 编辑页，包含已生成的预览视频和 HD 视频。
-
-**实现要求**
-
-- 视频可播放时，在视频画面中央显示清晰可点击的播放按钮。点击后播放当前 Clip 视频，暂停后重新显示播放按钮。
-- 播放按钮须适配移动端视频容器，确保窄屏上完整可见。
-
-**验收标准**
-
-- 在手机上分别打开已生成的预览视频和 HD 视频，确认播放前可看到播放按钮，点击后正常播放，暂停后可再次点击播放。
-
-## 39｜移动端 Clip 生成预览和 HD 后纵向排列操作按钮
-
-**修改范围**
-
-AI Movie 的移动端 Clip 编辑页，预览视频或 HD 视频生成成功后显示的操作区。
-
-**实现要求**
-
-| Clip 状态 | 上方按钮 | 下方按钮 |
+| 状态 | 上方按钮 | 下方操作 |
 | --- | --- | --- |
-| 预览视频已生成 | **Generate Clip in HD** | **Preview Clip again** |
-| HD 视频已生成 | **Add Clip →** | **Preview Clip again** |
-
-- 两种状态均使用单列布局，按钮等宽并撑满操作区，留出适当的纵向间距。
-- 沿用按钮现有功能和文案。允许文案自然换行，按钮高度随内容调整，完整显示分辨率和积分。
+| 已填完输入，尚未生成预览 | **Generate** 独占一行，撑满功能区内侧的可用宽度。 | **Preview First · 10 credits** 和右侧 **?** 继续同排显示。 |
+| 预览已生成 | **Generate HD** 独占一行，撑满功能区内侧的可用宽度。 | **Discard & redo** 独占一行，同样撑满可用宽度。 |
 
 **验收标准**
 
-- 在手机窄屏上分别生成预览视频和 HD 视频，确认两种状态下的按钮均按表中顺序排列，文案完整、互不重叠，且均可点击。
+- 在较窄和较宽的手机视口分别填完输入，确认积分提示独占第一行，**Generate** 独占第二行并与功能内容区左右对齐，**Preview First · 10 credits** 和 **?** 在第三行完整可见并可点击。
+- 预览生成后，确认 **Generate HD** 和 **Discard & redo** 上下排列、等宽且各自铺满一行，窄屏上文案完整可读。
 
-## 40｜AI Movie 的 Clip 生成 HD 时省略低清预览视频的尾帧
+## 46｜AI Movie 导出完成后直接下载 HD 视频
 
-**实现要求**
-
-- 已有低清预览的 Clip 发起 HD 生成任务时，发送给 HD 生成工作流的请求省略该 Clip 的低清预览视频尾帧。
-- 其他输入沿用现有流程。此项适用于桌面端和移动端的 Clip HD 生成流程。
-
-**验收标准**
-
-- 生成 Clip 的低清预览后发起 HD 任务，检查发送给 HD 工作流的实际请求，确认其中省略了该低清预览视频的尾帧，且 HD 视频可正常生成。
-
-## 41｜AI Movie 整片播放页仅支持 HD 播放和导出
-
-**修改范围**
-
-AI Movie 的 **Whole movie** 整片播放页及其导出流程。
-
-**实现要求**
-
-- 移除 **HD / Preview** 切换控件。整片播放仅使用 Clip 的 HD 视频。
-- 整片导出仅使用 HD 视频。仅生成低清预览的 Clip 不得作为播放或导出的素材。没有可用的 HD 视频时，提示用户先生成 HD Clip。
-- 单个 Clip 编辑页仍可播放该 Clip 的低清预览。
-
-**验收标准**
-
-- 使用同时包含已生成 HD 的 Clip 和仅生成低清预览的 Clip 的电影，确认整片页没有 **Preview** 切换入口，播放和导出均不使用低清预览素材。
-- 使用只有低清预览的电影，确认整片页提示先生成 HD，且无法播放或导出低清预览。
-
-## 42｜修复 AI Movie 移动端页面的横向溢出
+**状态：待修复。**
 
 **现象**
 
-在手机上打开 AI Movie 页面时，整页可以左右滑动。
+在 **Whole movie** 页面导出 HD 视频后，点击 **Download HD** 会打开视频播放页。
 
-**实现要求**
+**预期与验收**
 
-- 找出超出可用宽度的元素，让内容、控件和弹窗适配手机屏幕。长文案可换行，避免裁切文字或按钮。
-- 整个页面仅沿纵向滚动。
+导出成功后，点击 **Download HD** 直接触发浏览器下载已导出的 MP4，当前页面继续停留在 **Whole movie**。在桌面端和移动端分别验证，确认文件可以通过浏览器下载流程保存并正常播放。
 
-**验收标准**
+## 47｜调整移动端积分记录的卡片布局
 
-- 在不同手机宽度下打开 AI Movie 页面，检查主要界面和弹窗。左右滑动时页面不横移，文字及操作按钮完整可见。
+**状态：待修改。**
 
-## 43｜移动端整片播放页首屏显示导出按钮
+**现象**
+
+移动端 **Credits History** 弹窗内，积分、任务说明和时间并排显示，任务说明被挤成多行，卡片过高。
+
+**预期与验收**
+
+- 改为两行布局。第一行左侧显示加粗的积分变动，右侧显示时间。第二行使用卡片内的全部可用宽度，显示任务名称和详情，例如 **AI Movie HD · 720p · 6s** 或 **Image to Video · Task 416385**。
+- 在手机窄屏下检查扣费和退款记录。任务说明可自然换行，积分、时间和详情完整可见，彼此不重叠，弹窗无横向滚动。
+
+## 48｜修复首页移动端菜单滚动并上移快捷入口
+
+**状态：待修改。**
+
+**现象**
+
+首页右上角菜单展开后无法上下滚动，矮屏上看不到底部菜单项。当前底部绿色按钮显示 **Get Started Free**，文案与 PC 首页顶部的对应入口不一致。
+
+**预期与验收**
+
+- 菜单内容区适配手机可视高度，内容超出时可在菜单内上下滑动，确保所有菜单项可访问。
+- 将原底部绿色按钮移到菜单内容区最上方，在 **AI VIDEO** 分组前独占一行。文案以 PC 端对应按钮为准（**Premium Tools**），点击后进入同一目标页面。
+- 在手机窄屏和矮屏上展开菜单，确认顶部按钮独立显示且可点击，向下滑动可访问 **Pricing** 等底部菜单项。
+
+## 49｜修复窄屏下作品卡片内容错位
+
+**状态：待修改。**
+
+**现象**
+
+图生视频页的 **My Creations** 在较窄的手机屏幕上，作品名称被截断，状态标签和剩余时间被挤在同一行，导致剩余时间折断或被裁切。
+
+**预期与验收**
+
+- 作品名称可根据可用宽度自然换行，下载按钮保持完整可见且可点击。
+- 状态标签和剩余时间在空间足够时同排展示。空间不足时，把剩余时间整体移到下一行左对齐，例如 **7d left** 作为一个整体显示。卡片高度应随内容调整。
+- 在窄屏双列布局下检查卡片，确认标题、下载按钮、状态和剩余时间能完整显示，彼此不重叠，卡片无横向溢出。
+
+## 50｜在图生视频和 AI Movie 的时长滑块下方加入提示
+
+**状态：待修改。**
 
 **修改范围**
 
-AI Movie 移动端的 **Whole movie** HD 播放页。目前播放器占用较多纵向空间，需向下滑动才能看到导出视频按钮。
+**Image to Video** 和 **AI Movie** 的 Clip 编辑页。将英文提示放在 **Duration** 滑块及刻度下方，作为常驻辅助文字。
 
-**实现要求**
+**英文文案**
 
-- 根据手机可视区高度缩小播放器显示区域，为下方导出视频按钮留出空间，使按钮在首屏完整可见并可点击。
-- 缩小时保持视频原有宽高比，完整显示画面和播放控件。优先检查占用纵向空间较多的 9:16 视频。
+> Match the duration to the action. Keep simple actions short. If you give them too much time, they can look like slow motion.
 
 **验收标准**
 
-- 在不同手机视口高度下打开可导出的 HD 电影，尤其是 9:16 竖屏电影，确认进入页面后无需下滑即可看到并点击导出按钮。
+- 两处时长设置均显示同一段文案。桌面端和移动端无需点击即可看到提示，窄屏下文字可自然换行。
 
-## 44｜丰富 AI Movie 和 Face Swap 功能页的介绍图文
+## 51｜为 AI Movie 每个 Clip 的描述区添加 Guide 按钮
 
-**修改范围**
+**状态：待修改。**
 
-两个功能页的工具操作区下方。沿用第 33 项的展示规则，未登录访客可见完整内容，公开 HTML 可读取主要文字。以下英文作为页面文案底稿。
+- 在每个 Clip 的 **Your description** 输入区右上角添加 **Guide** 按钮，沿用图生视频的入口和弹窗样式。
+- 点击打开适用于 AI Movie 的描述指南。说明如何用自然语言描述当前 Clip 的动作和对白、如何用 `@名称` 引用参考图，以及如何先看预览再调整描述。示例使用 AI Movie 的引用方式。
+- 在桌面端和移动端切换不同 Clip，确认每个 Clip 都能打开和关闭指南，原有输入内容保留。
 
-### AI Movie
+## 52｜在 AI Movie 的 Clip Guide 首条说明如何引用参考图
 
-围绕 **AI movie maker** 和 **AI short film maker** 组织内容，重点介绍用户如何复用角色并逐段制作短片。
+**状态：待修改。**
 
-| 模块 | 英文标题与正文 | 配图 |
-| --- | --- | --- |
-| 产品介绍 | **Make a short film with consistent characters.** Build your film one clip at a time. Reuse characters from your library and export your HD clips as one movie. | 用同一原创角色在两段不同场景中的画面，搭配整片播放界面。 |
-| 角色与参考图 | **Reuse characters, scenes, and props.** Add recurring characters from your library. Use reference images to show what a location or prop should look like, and mention it by name in your clip description. | 展示实际的 Reference Images 分类，以及通过 @名称引用素材的操作。 |
-| 制作流程 | **Preview each clip before generating it in HD.** Describe what happens in a clip, preview the result, and revise the description if needed. When you are happy with the preview, generate the clip in HD and move on to the next one. | 用同一个 Clip 展示描述、预览和 HD 结果。 |
-| 整片播放与导出 | **Play and export your film in HD.** Open Whole movie to watch your HD clips in order and export them as a single video. | 展示整片播放与导出入口，以第 41 项的 HD 流程为准。 |
+在第 51 项的 **Guide** 弹窗中，将下方英文说明和示例一起显示为第一条。示例另起一行，放在说明下方。
 
-**FAQ 文案**
+> To keep a character, location, or prop consistent across clips, you must mention it in the description for each clip where it appears. Use its reference image name with `@`, such as `@Maya`, `@Cafe`, or `@RedSuitcase`.
 
-- **Can I use the same character in multiple clips?** Yes. Add the character from your library and reference them by name in each clip where they appear.
-- **What can I add as a reference image?** You can add characters, scenes, and props. Reference them by name when describing what happens in a clip.
-- **Can I export a movie made from preview clips?** Movie export uses HD clips. Generate each clip you want to include in HD before exporting.
+> **Example**
+> `@Maya walks into @Cafe carrying @RedSuitcase.`
 
-### Face Swap
+**验收标准**
 
-围绕 **AI face swap**、**photo face swap** 和 **video face swap** 组织内容，分别说明两种任务的输入和操作。
-
-| 模块 | 英文标题与正文 | 配图 |
-| --- | --- | --- |
-| 产品介绍 | **Swap faces in photos and videos.** Choose the photo or video you want to edit, then add a photo of the face you want to use. Select which face to replace and generate your result. | 用获得许可的示例素材，展示原图、替换人脸及处理结果。 |
-| 图片换脸 | **Choose who to replace in a group photo.** Upload a group photo, then match each face you want to replace with its replacement. | 用多人合影展示实际的人脸配对界面，示例数量以当前功能为准。 |
-| 视频换脸 | **Swap a face in a video.** Upload the video you want to edit and a clear photo of the replacement face. Use the video workflow to generate your result. | 用同一时刻的画面对比原片和结果，配合实际上传界面。 |
-| 素材准备与使用要求 | **Use a clear photo and get consent.** A well-lit photo with an unobstructed face is a good starting point. Use only photos and videos you have the right to use, and get consent from anyone whose likeness you use. | 展示可用的参考图示例，并链接到 Terms of Service。 |
-
-**FAQ 文案**
-
-- **Can I swap faces in both photos and videos?** Yes. Choose the photo or video workflow based on the file you want to edit.
-- **Can I replace more than one face in a photo?** Yes. In photo mode, match each face you want to replace with its replacement.
-- **What kind of photo should I use for the replacement face?** Start with a sharp, well-lit photo where the face is clearly visible.
-- **How many credits does a face swap cost?** See Pricing for current rates. 发布前核对图片和视频各自的计费规则，若补充具体数字，以实际上线价格为准。
-
-**SEO 与 GEO 验收**
-
-- 两个页面各自使用清晰的英文小标题，工具用途、输入、结果和限制用可见正文说明。FAQ 先直接回答问题，再交代适用条件。
-- 用实际界面和前后对比展示流程。给图片添加描述具体画面信息的英文 alt 文本。关键操作和说明同步保留在 HTML 文本中。
-- 在相关段落自然链接到 **Image to Video**、**Pricing** 或 **Terms of Service** 等对应页面。发布前逐条核对预览与 HD 的用途、换脸配对和计费文案。
-- 参考 [Google Search Central 的 AI 搜索功能指南](https://developers.google.com/search/docs/appearance/ai-features)。
+- 在桌面端和移动端打开任一 Clip 的 **Guide**，确认首条说明包含角色、场景和道具三类素材，并明确要求在当前 Clip 的描述中用 `@名称` 引用。确认英文示例也在弹窗内显示，且保留三个 `@` 引用。
