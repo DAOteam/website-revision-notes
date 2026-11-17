@@ -140,3 +140,14 @@ AI Movie 电影编辑页内，站点顶栏下方的电影导航栏。PC 端采�
 
 - 在桌面端和移动端分别切换 **Preview** 和 **HD**，确认两种模式均能播放，并能导出、直接下载对应版本的 MP4。
 - 对已有预览但尚无 HD 成片的电影，确认用户可以正常播放和下载预览版。
+
+## 54｜调整 AI Movie 参考图区域的声音说明
+
+**状态：待修改。**
+
+- 将 **How voices work** 从 **Reference Images** 区域底部移到上方 **Characters**（参考角色）区的正下方，放在 **Scenes** 前。保留现有展开和收起交互，在标题 **How voices work** 前加黄色圆形信息图标（ⓘ）。
+- 将当前关于两个女性在同一个 Clip 说话的说明替换为以下文案：
+
+  > Use no more than one speaker with a reference voice per gender in each clip. If two characters of the same gender both speak and both have reference voices, one of their reference voices may be ignored. Split their dialogue into two clips and have one character speak in each.
+
+- 删除整条旧说明：“Within one gender, voices are handed out in speaking order — set it under the prompt.” 保留音色和录音时长、文件大小的说明。
