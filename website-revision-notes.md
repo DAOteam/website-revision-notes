@@ -18,38 +18,6 @@ AI Movie 电影编辑页内，站点顶栏下方的电影导航栏。PC 端采�
 
 - PC 端核对布局、菜单和弹窗与移动端一致。
 
-## 45｜调整图生视频预览前后的操作按钮宽度和文案
-
-**状态：待修改。**
-
-**修改范围**
-
-**Image to Video** 填完输入后、尚未生成预览，以及预览生成完成这两种状态下的操作区。
-
-移动端各视口宽度统一分行，包括较宽的手机屏幕。**Credits required** 单独一行显示，下一行放生成按钮，预览或重做操作再另起一行。
-
-| 状态 | 上方按钮 | 下方操作 |
-| --- | --- | --- |
-| 已填完输入，尚未生成预览 | **Generate** 独占一行，撑满功能区内侧的可用宽度。 | **Preview First · 10 credits** 和右侧 **?** 继续同排显示。 |
-| 预览已生成 | **Generate HD** 独占一行，撑满功能区内侧的可用宽度。 | **Discard & redo** 独占一行，同样撑满可用宽度。 |
-
-**验收标准**
-
-- 在较窄和较宽的手机视口分别填完输入，确认积分提示独占第一行，**Generate** 独占第二行并与功能内容区左右对齐，**Preview First · 10 credits** 和 **?** 在第三行完整可见并可点击。
-- 预览生成后，确认 **Generate HD** 和 **Discard & redo** 上下排列、等宽且各自铺满一行，窄屏上文案完整可读。
-
-## 46｜AI Movie 导出完成后直接下载 HD 视频
-
-**状态：待修复。**
-
-**现象**
-
-在 **Whole movie** 页面导出 HD 视频后，点击 **Download HD** 会打开视频播放页。
-
-**预期与验收**
-
-导出成功后，点击 **Download HD** 直接触发浏览器下载已导出的 MP4，当前页面继续停留在 **Whole movie**。在桌面端和移动端分别验证，确认文件可以通过浏览器下载流程保存并正常播放。
-
 ## 47｜调整移动端积分记录的卡片布局
 
 **状态：待修改。**
@@ -115,39 +83,95 @@ AI Movie 电影编辑页内，站点顶栏下方的电影导航栏。PC 端采�
 - 点击打开适用于 AI Movie 的描述指南。说明如何用自然语言描述当前 Clip 的动作和对白、如何用 `@名称` 引用参考图，以及如何先看预览再调整描述。示例使用 AI Movie 的引用方式。
 - 在桌面端和移动端切换不同 Clip，确认每个 Clip 都能打开和关闭指南，原有输入内容保留。
 
-## 52｜在 AI Movie 的 Clip Guide 首条说明如何引用参考图
+## 52｜调整 AI Movie 的 Clip Guide 条目顺序
 
 **状态：待修改。**
 
-在第 51 项的 **Guide** 弹窗中，将下方英文说明和示例一起显示为第一条。示例另起一行，放在说明下方。
+将第 51 项的 **Guide** 弹窗 **How to Write Your Description** 按原第 2、3、1、4 条的顺序排列，并重新编号为 1–4。沿用现有英文文案，显示顺序如下。
 
-> To keep a character, location, or prop consistent across clips, you must mention it in the description for each clip where it appears. Use its reference image name with `@`, such as `@Maya`, `@Cafe`, or `@RedSuitcase`.
+1. 用自己的话描述当前 Clip 的动作，并说明如何点击名称插入 `@` 引用。
+2. 说明如何为角色编写对白，保留现有对白示例。
+3. 说明如何用参考图保持角色、场景和道具一致。英文说明及示例如下，示例另起一行，放在说明下方。
 
-> **Example**
-> `@Maya walks into @Cafe carrying @RedSuitcase.`
-
-**验收标准**
-
-- 在桌面端和移动端打开任一 Clip 的 **Guide**，确认首条说明包含角色、场景和道具三类素材，并明确要求在当前 Clip 的描述中用 `@名称` 引用。确认英文示例也在弹窗内显示，且保留三个 `@` 引用。
-
-## 53｜恢复 AI Movie 整片预览和 HD 的播放与下载
-
-**状态：待修改。**
-
-在 AI Movie 的 **Whole movie** 页回滚第 41 项的仅 HD 限制，恢复 **Preview / HD** 切换。两种模式均可播放整片，并在导出后下载对应版本的 MP4。各模式沿用改动前的片段选取规则。下载按钮直接触发文件下载，沿用第 46 项的交互。
+   > To keep a character, location, or prop consistent across clips, you must mention it in the description for each clip where it appears. Use its reference image name with `@`, such as `@Maya`, `@Cafe`, or `@RedSuitcase`.
+   >
+   > **Example**  
+   > `@Maya walks into @Cafe carrying @RedSuitcase.`
+4. 先预览 Clip，按需调整描述并重新预览，满意后生成 HD。
 
 **验收标准**
 
-- 在桌面端和移动端分别切换 **Preview** 和 **HD**，确认两种模式均能播放，并能导出、直接下载对应版本的 MP4。
-- 对已有预览但尚无 HD 成片的电影，确认用户可以正常播放和下载预览版。
+- 在桌面端和移动端打开任一 Clip 的 **Guide**，确认条目按上述顺序连续编号为 1–4，第 3 条的英文示例仍显示在该条说明下方，且保留三个 `@` 引用。
 
 ## 54｜调整 AI Movie 参考图区域的声音说明
 
 **状态：待修改。**
 
 - 将 **How voices work** 从 **Reference Images** 区域底部移到上方 **Characters**（参考角色）区的正下方，放在 **Scenes** 前。保留现有展开和收起交互，在标题 **How voices work** 前加黄色圆形信息图标（ⓘ）。
+- 缩小黄色圆形信息图标，使其与标题文字大小协调。图标、标题文字和左侧展开箭头在同一行垂直居中对齐，图标与文字之间保留适当间距。桌面端和移动端均检查展开与收起时的对齐效果。
 - 将当前关于两个女性在同一个 Clip 说话的说明替换为以下文案：
 
   > Use no more than one speaker with a reference voice per gender in each clip. If two characters of the same gender both speak and both have reference voices, one of their reference voices may be ignored. Split their dialogue into two clips and have one character speak in each.
 
 - 删除整条旧说明：“Within one gender, voices are handed out in speaking order — set it under the prompt.” 保留音色和录音时长、文件大小的说明。
+
+## 55｜为图生视频作品详情的 Task ID 添加复制按钮
+
+**状态：待修改。**
+
+- 在图生视频的作品详情弹窗中，在 **Task ID** 号码右侧添加复制按钮，按钮的无障碍名称为 **Copy task ID**。
+- 点击后将当前任务的 ID 号码复制到剪贴板。例如显示 `Task ID: 416385` 时，粘贴结果为 `416385`。
+- 复制成功后短暂显示 **Copied**。桌面端和移动端均可使用。
+
+## 56｜统一全站功能页选项的选中样式
+
+**状态：待修改。**
+
+- 以 **AI Movie 设置弹窗**中的 **Aspect ratio** 和 **Resolution** 为样式基准。全站功能页面的可选参数按钮统一采用该选中效果，覆盖图生视频的分辨率、宽高比及其他功能页的同类选项。
+- 选中项使用绿色描边、深绿色底和浅色文字。有图标时沿用参考样式的绿色图标。未选中项使用深灰底、灰色描边和灰色文字。图生视频切换后出现的灰底黑字应一并修复。
+- 桌面端点击、悬停和移开鼠标，以及移动端点按后，选中样式均与当前值一致。切换选项后，新项立即高亮，原项恢复未选中样式。
+- 桌面端和移动端均需核对全站功能页的参数选项。图生视频需额外验证预览生成前切换宽高比和分辨率，以及预览生成后切换 **720p / 1080p**。
+
+## 57｜为移动端 AI Movie 的整片播放入口加上白色选中标记
+
+**状态：待修改。适用范围：仅移动端。**
+
+- 在移动端点击 AI Movie 左侧栏的播放按钮进入 **Whole movie** 时，在按钮左侧显示与选中 **Clip** 相同的白色竖条，保留按钮现有的绿色样式。
+- 只在当前视图对应的入口显示白色竖条。进入 **Whole movie** 后移除 Clip 左侧的白条，切回某个 Clip 时将白条移回该 Clip。
+- 在移动端来回切换 Clip 与 **Whole movie**，确认白条始终跟随当前视图。
+
+## 58｜视频换脸在打开选脸弹窗后检测人脸
+
+**状态：待修改。**
+
+- 视频换脸的源视频上传完成后，等待用户点击 **Choose the face**。
+- 点击后立即打开选脸弹窗，再开始检测当前源视频中的人脸。检测中的 **Finding the faces in your media…** 提示显示在弹窗内，结果返回后在弹窗内显示可选人脸。
+- 验收时先上传视频并停留在表单，确认未发起检测。点击 **Choose the face** 后，确认弹窗先出现，并在其中显示检测进度和结果。
+
+## 59｜在 AI Movie 作品列表显示保留期限和剩余时间
+
+**状态：待修改。**
+
+- 在 AI Movie 的 **YOUR MOVIES** 标题右侧加上提示 **Movies are kept for 3 months.** 窄屏空间不足时，提示可换到标题下方。
+- 每张作品卡片的底部显示距离该作品到期的剩余时间，沿用图生视频 **My Creations** 的样式和格式，例如 **85d left**。用剩余时间替换卡片右下角目前显示的相对时间或日期。
+- 倒计时以该作品的实际到期时间为准。桌面端和移动端均需确认提示可见、卡片倒计时完整显示。
+
+## 60｜统一首页免费功能模块和等待页的 Pro 权益文案
+
+**状态：待修改。**
+
+更新首页免费功能模块的 **WANT BETTER RESULTS?** 卡片和免费任务等待页的 **Waiting too long? Go Pro** 卡片。
+
+| 权益 | 首页免费功能模块 | 等待页 |
+|---|---|---|
+| 分辨率 | **1080p HD** resolution (vs low resolution on the free plan) | **1080p**，副文案为 **Low resolution on the free plan** |
+| 音频 | **Audio generation** — synced character dialogue and sound effects (silent on free) | **Audio**，副文案为 **Synced character dialogue and sound effects** |
+| 工具 | **All AI tools** — AI Movie, video, image, editing, Face Swap | **All AI tools**，副文案为 **AI Movie, video, image, editing, Face Swap** |
+
+## 61｜允许移除图片编辑页已上传的图片
+
+**状态：待修改。**
+
+- 在图片编辑页 **Set up your edit** 区域，上传图片后，在预览右上角显示 × 按钮，无障碍名称为 **Remove image**。桌面端和移动端均可直接点击。
+- 点击后清除当前图片和预览，恢复上传入口。保留已输入的编辑描述，用户可继续上传同一张或另一张图片。
+- 验收时确认移除后不会用旧图提交任务，重新选图后使用新选中的图片。
