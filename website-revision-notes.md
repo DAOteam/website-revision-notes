@@ -198,3 +198,34 @@ AI Movie 电影编辑页内，站点顶栏下方的电影导航栏。PC 端采�
 **验收**
 
 - 用同时包含已有 HD、仅有低清预览和无预览的电影，核对确认范围、积分和逐段生成顺序。验收积分不足、重复提交、刷新恢复、失败重试以及全片 HD 就绪后的切换入口。
+
+## 63｜移除 AI Movie 合并视频时的服务端切换提示
+
+**状态：待修改。**
+
+- 在 **Whole movie → Export as one file** 中，浏览器合并失败并自动切换到服务端合并时，移除卡片下方的提示 **Couldn’t join the clips in this browser — joining them on our server instead.**
+- 服务端继续自动合并，卡片保留 **Joining…** 和用时。合并成功后保留现有下载入口，服务端也合并失败时仍显示最终错误。
+
+## 64｜移除 AI Movie 的 Check the seam 按钮
+
+**状态：待修改。**
+
+- 在 AI Movie 单个 Clip 编辑页，移除视频播放器下方、**Your description** 上方右侧的 **Check the seam** 按钮。移除按钮占用的空间，保留播放器和片段预览。
+- 在桌面端和移动端打开已有预览的后续片段，确认按钮已移除，视频仍可正常播放。
+
+## 65｜移除 AI Movie 生成提示词时的女性参考声音提示
+
+**状态：待修改。**
+
+- 在 AI Movie 的 Clip 编辑页生成提示词时，移除提示 **A female voice only takes effect when someone in the segment has a male voice.**
+- 使用带女性参考声音且没有男性声音的片段生成提示词，确认这条提示不再出现，提示词可正常生成。
+
+## 66｜重新生成中间 Clip 的 Preview 前要求确认
+
+**状态：待修改。**
+
+- 在 AI Movie 的 Clip 编辑页，用户点击重新生成已有 Preview 时，检查当前中间 Clip 之后的所有片段。只要任一后续 Clip 已生成 Preview 或 HD，即使中间隔着未生成的片段，也必须先弹出警告。
+- 弹窗标题为 **Regenerate this preview?**，正文为 **The new preview may no longer match the clips before and after it.** 如果当前 Clip 已有 HD，再显示 **You’ll lose the existing HD video for this clip.**
+- **I understand and agree** 复选框每次打开都默认不勾选。**Regenerate Preview** 按钮默认灰色且禁用，勾选后才可点击，取消勾选后立即恢复禁用。关闭弹窗或点击 **Cancel** 时，保留当前 Preview 和 HD，不提交生成任务。
+- 用户确认后才启动重生成。新 Preview 生成成功后替换旧 Preview，并移除当前 Clip 已有的 HD。生成失败时保留旧 Preview 和 HD。后续 Clip 已生成的内容保留。
+- 验收覆盖后续只有 Preview、只有 HD、隔段已有结果、后续均无结果，以及当前 Clip 有无 HD 的情况。确认有后续结果时无法绕过勾选直接提交。
