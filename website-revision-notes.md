@@ -114,3 +114,55 @@
 - 按钮：**Explore Premium Tools**。
 - 底部小字：**Free videos are 5 seconds, low resolution, and silent.**
 - 本项与第 70 项的示例标题不一致时，以本项最终文案为准。取消任务入口按第 68 项放在本卡片上方。
+
+## 76｜免费任务按时间排队，符合条件的访客注册领取 60 积分
+
+**状态：待修改。适用范围：免费任务排队及新用户注册赠送流程，桌面端和移动端。**
+
+### 排队与邀请资格
+
+- 所有用户的免费任务默认按任务发起时间先后排队，不因 IP 判断结果自动插队。IP 判断决定是否提供注册领取 Premium Tools 积分的邀请资格，不直接加速原免费任务。
+- 后端根据 IP 判断资格。具体识别规则复用业务配置，不在本项中臆造国家、地区或次数阈值；领取时结合账户及领取记录校验，同一资格不得重复发奖。
+- 仅对符合资格且尚未登录、免费任务仍在排队的访客自动弹出邀请。同一任务不反复自动弹出；关闭弹窗或选择继续等待，保留原任务及排队位置。
+- 已经开始生成或已结束的任务不触发此邀请。本项替代此前讨论的广告、分享助力方案，不接入广告或好友助力。
+
+### 邀请弹窗最终文案
+
+**Try Premium Tools with 60 free credits**
+
+Your free video is currently **#{queue_position} in the queue**.
+
+Create an account to claim 60 free credits for Premium Tools. Once you claim your credits, your current free task will be canceled.
+
+主按钮：**Create account & claim 60 credits**
+
+次按钮：**Keep waiting for free**
+
+补充说明：**Your free task will stay in the queue until you finish signing up and claim your credits.**
+
+- 队列位置由后端实际状态提供并刷新，不使用固定示例排名或虚构等待时长。
+- 点击主按钮进入注册流程，明确关联当前排队任务与赠送资格。完成注册和领取前，不因该按钮操作提前取消任务；用户退出、注册失败或领取失败时不主动取消原任务。
+- 从此邀请进入的正常注册流程不应因注册弹窗或身份验证跳转触发离开页面 2 分钟的取消规则，以免与上述保留承诺冲突；普通离线规则不在本项中另行改造。
+
+### 注册领取成功后的处理
+
+- 注册成功后自动完成资格校验及 60 积分领取，无需用户再找领取按钮。确认积分真实到账且原任务仍可取消后，完成取消原免费任务和兑换处理，避免只取消却未发奖。
+- 实现重复请求保护；重复点击、刷新、多个标签页或注册回调重放均不得重复发放 60 积分。赠送记录与账户余额一致，领取失败提供真实状态及重试入口，不显示虚假到账提示。
+- 注册期间任务若已经进入生成或已完成，重新校验状态，不强行取消已经开始的任务；明确提示当前任务状态，不显示“已取消”的兑换成功文案。
+- 正常兑换成功后自动显示以下到账弹窗：
+
+**You’ve received 60 free credits!**
+
+Your free task has been canceled. Use your credits to create with Premium Tools.
+
+按钮：**Explore Premium Tools**
+
+- 仅在确认发放成功后显示获得 60 积分；不要把已有账户登录成功当作新用户注册领取成功。
+- 此领取流程不自动携带或迁移原图片、描述，也不承诺已保存到 Premium Tools；不显示 **Your image and description are ready in Premium Tools.** 或同义文案。此约束专用于本项注册领取流程。
+- 点击 Explore Premium Tools 进入现有 Premium Tools 入口，用户自行选择功能、上传素材并填写描述；不自动创建高级生成任务、不自动扣积分。
+
+### 验收
+
+- 覆盖符合资格与不符合资格的 IP、邀请关闭、继续排队、注册放弃/失败、领取失败、正常注册到账、重复领取及多标签页，以及注册期间任务已开始/完成的情况。
+- 正常兑换后原免费任务不再占用队列或继续生成，账户仅到账一次 60 积分；成功弹窗自动出现且可正常关闭，图片和描述不自动迁移。
+- 桌面端及移动端完整验证注册返回、任务状态、队列实际排名、赠送余额与弹窗文案一致。
