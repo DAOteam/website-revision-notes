@@ -78,3 +78,14 @@ Your free task has been canceled. Use your credits to create with Premium Tools.
 - HD 尚未生成时仍保留 HD 选项。点击后展示高清生成入口及所需积分：单个 Clip 展示对应单段入口，整片展示批量生成入口及已有的跳过/依赖规则。用户明确确认后才生成和扣积分，切换按钮本身不直接提交生成任务。
 - HD 已生成时，点击 HD 正常切换播放高清版本，点击 Preview 切回预览版本；缺少对应版本时展示真实空状态或生成状态，不将另一个版本伪装为已选版本。
 - 验收：对比单个 Clip 与整片页面的位置、尺寸和各状态；覆盖首次/重新进入、刷新、手动切换、HD 未生成/生成中/已完成，以及桌面和移动端。已有明确 **Watch Full Movie in HD** 等高清专用入口继续表达其指定版本，不将其作为默认 Preview 的常规入口。
+
+## 78｜最后一个 Clip 未生成时点击 Add Clip 显示提示
+
+**状态：待修改。适用范围：AI Movie 添加 Clip，桌面端及移动端。**
+
+- 用户点击 **Add Clip** 时检查电影列表中的最后一个 Clip，而非当前选中的片段。最后一段尚无成功生成的 Preview 或 HD 时，不新增 Clip，并显示明确提示。
+- 提示文案：**Generate a preview for Clip {number} before adding another clip.** 片段编号使用实际最后一段编号，例如 **Generate a preview for Clip 9 before adding another clip.**
+- Add Clip 保持可点击以便显示提示，不仅置灰而不给原因。提示关闭或消失后可继续编辑、生成最后一段，已有描述及素材保留。
+- 仅填写描述、生成 H3 提示词、排队、生成中或生成失败均不视为已有生成结果；完成 Preview 后即可添加下一段，不要求先生成 HD。若最后一段已有可用 HD，也允许新增。
+- 最后一段正在生成且尚无结果时，提示：**Clip {number} is still generating. Wait for it to finish before adding another clip.** 不重复发起生成。
+- 验收：覆盖最后一段为空草稿、仅提示词、排队/生成中、失败、已有 Preview 和已有 HD；选中较早片段时仍按列表最后一段判断；快速重复点击不新增多个空片段。
